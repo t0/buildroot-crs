@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-TUBER_VERSION = v0.5
+TUBER_VERSION = v0.6
 TUBER_SITE_METHOD = git
 TUBER_SITE = ssh://git@github.com/gsmecher/tuber.git
 TUBER_LICENSE = GPL-3.0
