@@ -1628,6 +1628,8 @@ static unsigned long psu_afi_config(void)
 	psu_mask_write(0xFF5E023C, 0x00080000U, 0x00000000U);
 	psu_mask_write(0xFD615000, 0x00000300U, 0x00000200U);
 	psu_mask_write(0xFF419000, 0x00000300U, 0x00000000U);
+	psu_mask_write(0xFD380000, 0x00000003U, 0x00000001U);
+	psu_mask_write(0xFD380014, 0x00000003U, 0x00000001U);
 
 	return 1;
 }
