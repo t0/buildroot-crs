@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_PLATFORMDIRS
+	bool "python-platformdirs"
+	help
+	  Python Platformdirs
+
+	  https://github.com/platformdirs/platformdirs

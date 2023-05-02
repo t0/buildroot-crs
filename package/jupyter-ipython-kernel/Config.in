@@ -1,0 +1,8 @@
+config BR2_PACKAGE_JUPYTER_IPYTHON_KERNEL
+	bool "jupyter-ipython-kernel"
+	select BR2_PACKAGE_HOST_PYTHON3
+	select BR2_PACKAGE_HOST_PYTHON3_SSL
+	help
+	  Jupyter IPython Kernel
+
+	  https://github.com/ipython/ipykernel

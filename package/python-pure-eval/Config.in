@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PYTHON_PURE_EVAL
+	bool "python-pure-eval"
+	help
+	  This is a Python package that lets you safely evaluate certain AST
+	  nodes without triggering arbitrary code that may have unwanted side
+	  effects.
+
+	  https://pypi.org/project/pure-eval/

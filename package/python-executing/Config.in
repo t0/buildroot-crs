@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PYTHON_EXECUTING
+	bool "python-executing"
+	select BR2_PACKAGE_PYTHON_PURE_EVAL
+	help
+	  This mini-package lets you get information about what a frame is
+	  currently doing, particularly the AST node being executed.
+
+	  https://pypi.org/project/executing/

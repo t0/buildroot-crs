@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PYTHON_STACK_DATA
+	bool "python-stack-data"
+	help
+	  This is a library that extracts data from stack frames and
+	  tracebacks, particularly to display more useful tracebacks than the default.
+
+	  https://pypi.org/project/stack-data/

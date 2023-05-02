@@ -1,0 +1,6 @@
+config BR2_PACKAGE_JUPYTERLAB_SERVER
+	bool "jupyterlab-server"
+	help
+	  Jupyterlab Server
+
+	  https://jupyter.org

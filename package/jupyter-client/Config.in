@@ -1,0 +1,6 @@
+config BR2_PACKAGE_JUPYTER_CLIENT
+	bool "jupyter-client"
+	help
+	  Jupyter Client
+
+	  https://github.com/jupyter-client/jupyter_client

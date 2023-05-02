@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_ANYIO
+	bool "python-anyio"
+	help
+	  AnyIO is an asynchronous networking and concurrency library that works on top of either asyncio or trio.
+
+	  https://pypi.org/project/anyio

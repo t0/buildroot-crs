@@ -1,0 +1,6 @@
+config BR2_PACKAGE_JUPYTER_SERVER
+	bool "jupyter-server"
+	help
+	  Jupyter Server
+
+	  https://github.com/jupyter-server/jupyter_server
