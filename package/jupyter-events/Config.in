@@ -1,0 +1,6 @@
+config BR2_PACKAGE_JUPYTER_EVENTS
+	bool "jupyter-events"
+	help
+	  Jupyter Events
+
+	  https://github.com/jupyter/jupyter_events

@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_SEND2TRASH
+	bool "python-send2trash"
+	help
+	  Send2Trash is a small package that sends files to the Trash (or Recycle Bin) natively and on all platforms.
+
+	  https://pypi.org/project/send2trash

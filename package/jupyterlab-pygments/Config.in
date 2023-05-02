@@ -1,0 +1,6 @@
+config BR2_PACKAGE_JUPYTERLAB_PYGMENTS
+	bool "jupyterlab-pygments"
+	help
+	  Jupyterlab Pygments theme
+
+	  https://jupyter.org
