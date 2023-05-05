@@ -35,7 +35,7 @@
 		i2c0 = &i2c0;
 		i2c1 = &i2c1;
 		mmc0 = &sdhci0;
-		//nvmem0 = &eeprom;
+		nvmem0 = &eeprom; /* this is how u-boot picks up the FRU */
 		rtc0 = &rtc;
 		serial0 = &uart0;
 		spi0 = &qspi;
@@ -385,6 +385,37 @@
 	pinctrl-0 = <&pinctrl_spi0_default>;
 };
 
+&i2c1 {
+	status = "okay";
+	clock-frequency = <400000>;
+
+	pca9546@70 {
+		compatible = "nxp,pca9546";
+		reg = <0x70>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		reset-gpios = <&gpio 36 GPIO_ACTIVE_LOW>;
+
+		i2c@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			/* Serial + EEPROM */
+			eeprom: at24c01@57 { compatible = "atmel,24c01"; reg = <0x57>; };
+			at24cs01@5f { compatible = "atmel,24cs01"; reg = <0x5f>; };
+
+			/* Rev1 only - PS-attached 7-segment LED */
+			u42: pca8574@22 {
+				compatible = "nxp,pca8574";
+				reg = <0x22>;
+				gpio-controller;
+				#gpio-cells = <1>;
+				gpio-line-names = "LED7_G", "LED7_E", "LED7_F", "LED7_D", "LED7_C", "LED7_A", "LED7_DP", "LED7_B";
+			};
+		};
+	};
+};
 
 &rtc {
 	status = "okay";
