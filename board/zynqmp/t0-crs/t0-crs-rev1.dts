@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0+
 /*
- * dts file for t0.technology CRS rev0
+ * dts file for t0.technology CRS rev1
  *
  * (C) Copyright 2022 t0.technology
  *
@@ -28,7 +28,7 @@
 
 / {
 	model = "t0.technology CRS Rev0";
-	compatible = "t0,zynqmp-crs-rev0", "t0,zynqmp-crs", "xlnx,zynqmp";
+	compatible = "t0,zynqmp-crs-rev1", "t0,zynqmp-crs", "xlnx,zynqmp";
 
 	aliases {
 		ethernet0 = &gem3;
@@ -39,7 +39,7 @@
 		rtc0 = &rtc;
 		serial0 = &uart0;
 		spi0 = &qspi;
-		spi1 = &spi0;
+		spi1 = &spi1;
 	};
 
 	chosen {
@@ -231,26 +231,26 @@
 		};
 	};
 
-	pinctrl_spi0_default: spi0-default {
+	pinctrl_spi1_default: spi1-default {
 		mux {
-			groups = "spi0_2_grp";
-			function = "spi0";
+			groups = "spi1_1_grp";
+			function = "spi1";
 		};
 
 		conf {
-			groups = "spi0_2_grp";
+			groups = "spi1_1_grp";
 			bias-disable;
 			slew-rate = <SLEW_RATE_SLOW>;
 			power-source = <IO_STANDARD_LVCMOS18>;
 		};
 
 		mux-cs {
-			groups = "spi0_ss_2_grp";
-			function = "spi0_ss";
+			groups = "spi1_ss_1_grp";
+			function = "spi1_ss";
 		};
 
 		conf-cs {
-			groups = "spi0_ss_2_grp";
+			groups = "spi1_ss_1_grp";
 			bias-disable;
 		};
 	};
@@ -365,11 +365,11 @@
 };
 
 /* HMC7044 hosted at SPI0 on rev0, but SPI1 on rev1. */
-spi_hmc7044: &spi0 {
+spi_hmc7044: &spi1 {
 	status = "okay";
 	num-cs = <1>;
 	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_spi0_default>;
+	pinctrl-0 = <&pinctrl_spi1_default>;
 };
 
 &i2c1 {
