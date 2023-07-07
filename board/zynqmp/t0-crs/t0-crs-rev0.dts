@@ -388,6 +388,34 @@ spi_hmc7044: &spi0 {
 			#address-cells = <1>;
 			#size-cells = <0>;
 
+			r5v0_tmp421@1c	{ compatible = "ti,tmp421"; reg = <0x1c>; channel@0 { reg = <0x0>; label = "r5v0"; }; };
+			r3v3a_tmp421@1d	{ compatible = "ti,tmp421"; reg = <0x1d>; channel@0 { reg = <0x0>; label = "r3v3a"; }; };
+			r2v5_tmp421@1e	{ compatible = "ti,tmp421"; reg = <0x1e>; channel@0 { reg = <0x0>; label = "r2v5"; }; };
+			r1v8_tmp421@1f	{ compatible = "ti,tmp421"; reg = <0x1f>; channel@0 { reg = <0x0>; label = "r1v8"; }; };
+
+			r1v2a_tmp421@2a	{ compatible = "ti,tmp421"; reg = <0x2a>; channel@0 { reg = <0x0>; label = "r1v2a"; }; };
+
+			vbp_ina231@40	{ compatible = "ti,ina231"; reg = <0x40>; shunt-resistor = <3900>; }; /* calibrated using SN006 */
+			r0v85a_ina231@41 { compatible = "ti,ina231"; reg = <0x41>; shunt-resistor = <20000>; };
+			r0v85b_ina231@42 { compatible = "ti,ina231"; reg = <0x42>; shunt-resistor = <20000>; };
+			r5v0_ina231@43	{ compatible = "ti,ina231"; reg = <0x43>; shunt-resistor = <20000>; };
+			r3v3a_ina231@44	{ compatible = "ti,ina231"; reg = <0x44>; shunt-resistor = <20000>; };
+			r2v5_ina231@45	{ compatible = "ti,ina231"; reg = <0x45>; shunt-resistor = <20000>; };
+			r1v8a_ina231@46	{ compatible = "ti,ina231"; reg = <0x46>; shunt-resistor = <20000>; };
+			r1v2a_ina231@47	{ compatible = "ti,ina231"; reg = <0x47>; shunt-resistor = <20000>; };
+
+			r1v4_ina231@4a	{ compatible = "ti,ina231"; reg = <0x4a>; shunt-resistor = <20000>; };
+			r1v2b_ina231@4b	{ compatible = "ti,ina231"; reg = <0x4b>; shunt-resistor = <20000>; };
+			r1v4_tmp421@4c	{ compatible = "ti,tmp421"; reg = <0x4c>; channel@0 { reg = <0x0>; label = "r1v4"; }; };
+			r1v2b_tmp421@4d	{ compatible = "ti,tmp421"; reg = <0x4d>; channel@0 { reg = <0x0>; label = "r1v2b"; }; };
+
+			r0v85_tmp422@4f	{
+				compatible = "ti,tmp422";
+				reg = <0x4f>;
+				channel@0 { reg = <0x0>; label = "r0v85a"; };
+				channel@1 { reg = <0x1>; label = "r0v85b"; };
+			};
+
 			/* Serial + EEPROM */
 			eeprom: at24c01@57 { compatible = "atmel,24c01"; reg = <0x57>; };
 			at24cs01@5f { compatible = "atmel,24cs01"; reg = <0x5f>; };
@@ -400,6 +428,7 @@ spi_hmc7044: &spi0 {
 				#gpio-cells = <1>;
 				gpio-line-names = "LED7_G", "LED7_E", "LED7_F", "LED7_D", "LED7_C", "LED7_A", "LED7_DP", "LED7_B";
 			};
+
 		};
 	};
 };
