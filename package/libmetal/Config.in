@@ -1,0 +1,7 @@
+config BR2_PACKAGE_LIBMETAL
+	bool "libmetal"
+	help
+	  Libmetal provides common user APIs to access devices, handle device
+	  interrupts and request memory in embedded environments.
+
+	  http://www.openampproject.org/
