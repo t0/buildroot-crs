@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2022.11-276-gca61bc54cc-dirty Configuration
+# Buildroot 2022.11-278-g18192ed24e-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -532,7 +532,7 @@ BR2_LINUX_KERNEL_GZIP=y
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 # BR2_LINUX_KERNEL_DTB_IS_SELF_BUILT is not set
 BR2_LINUX_KERNEL_INTREE_DTS_NAME="t0-crs-rev0"
-BR2_LINUX_KERNEL_CUSTOM_DTS_PATH="board/zynqmp/t0-crs/t0-crs-rev0.dts board/zynqmp/t0-crs/t0-crs-rev1.dts"
+BR2_LINUX_KERNEL_CUSTOM_DTS_PATH="board/zynqmp/t0-crs/t0-crs-rev0.dts board/zynqmp/t0-crs/t0-crs-rev1.dts board/zynqmp/t0-crs/t0-crs-rev2.dts"
 # BR2_LINUX_KERNEL_DTB_KEEP_DIRNAME is not set
 BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT=y
 # BR2_LINUX_KERNEL_INSTALL_TARGET is not set
@@ -1160,7 +1160,7 @@ BR2_PACKAGE_MEMTESTER=y
 # BR2_PACKAGE_OPENIPMI is not set
 # BR2_PACKAGE_OPENOCD is not set
 # BR2_PACKAGE_PARTED is not set
-# BR2_PACKAGE_PCIUTILS is not set
+BR2_PACKAGE_PCIUTILS=y
 # BR2_PACKAGE_PDBG is not set
 # BR2_PACKAGE_PICOCOM is not set
 # BR2_PACKAGE_PIGPIO is not set
@@ -3446,7 +3446,7 @@ BR2_TARGET_UBOOT_ZYNQMP=y
 BR2_TARGET_UBOOT_ZYNQMP_PMUFW="board/zynqmp/t0-crs/pmufw.bin"
 BR2_TARGET_UBOOT_ZYNQMP_PM_CFG="board/zynqmp/t0-crs/pm_cfg_obj.c"
 BR2_TARGET_UBOOT_ZYNQMP_PSU_INIT_FILE="board/zynqmp/t0-crs/psu_init_gpl.c"
-BR2_TARGET_UBOOT_CUSTOM_DTS_PATH="board/zynqmp/t0-crs/t0-crs-rev0.dts board/zynqmp/t0-crs/t0-crs-rev1.dts"
+BR2_TARGET_UBOOT_CUSTOM_DTS_PATH="board/zynqmp/t0-crs/t0-crs-rev0.dts board/zynqmp/t0-crs/t0-crs-rev1.dts board/zynqmp/t0-crs/t0-crs-rev2.dts"
 BR2_TARGET_UBOOT_CUSTOM_MAKEOPTS="DEVICE_TREE=t0-crs-rev0"
 # BR2_TARGET_VEXPRESS_FIRMWARE is not set
 
