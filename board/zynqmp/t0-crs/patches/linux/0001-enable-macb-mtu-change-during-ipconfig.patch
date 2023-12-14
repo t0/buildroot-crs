@@ -1,0 +1,24 @@
+diff -ubr a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+--- a/drivers/net/ethernet/cadence/macb_main.c
++++ b/drivers/net/ethernet/cadence/macb_main.c
+@@ -2987,12 +2987,16 @@
+ 
+ static int macb_change_mtu(struct net_device *dev, int new_mtu)
+ {
+-	if (netif_running(dev))
+-		return -EBUSY;
+-
++	/* if network interface not up, no need for complexity */
++	if (!netif_running(dev)) {
+ 	dev->mtu = new_mtu;
+-
+ 	return 0;
++	}
++
++	/* network IS up, close it, reset MTU, and come up again. */
++	macb_close(dev);
++	dev->mtu = new_mtu;
++	return macb_open(dev);
+ }
+ 
+ static void gem_update_stats(struct macb *bp)
