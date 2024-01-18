@@ -2,7 +2,7 @@
 /*
  * dts file for t0.technology CRS rev1
  *
- * (C) Copyright 2022 t0.technology
+ * (C) Copyright 2022-2024 t0.technology
  *
  * Graeme Smecher <gsmecher@t0.technology>
  */
@@ -27,7 +27,7 @@
 #include <dt-bindings/phy/phy.h>
 
 / {
-	model = "t0.technology CRS Rev0";
+	model = "t0.technology CRS Rev1";
 	compatible = "t0,zynqmp-crs-rev1", "t0,zynqmp-crs", "xlnx,zynqmp";
 
 	aliases {

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0+
 /*
- * dts file for t0.technology CRS rev0
+ * dts file for t0.technology CRS rev3
  *
  * (C) Copyright 2022-2024 t0.technology
  *
@@ -27,8 +27,8 @@
 #include <dt-bindings/phy/phy.h>
 
 / {
-	model = "t0.technology CRS Rev0";
-	compatible = "t0,zynqmp-crs-rev0", "t0,zynqmp-crs", "xlnx,zynqmp";
+	model = "t0.technology CRS Rev3";
+	compatible = "t0,zynqmp-crs-rev3", "t0,zynqmp-crs", "xlnx,zynqmp";
 
 	aliases {
 		ethernet0 = &gem3;
@@ -39,7 +39,7 @@
 		rtc0 = &rtc;
 		serial0 = &uart0;
 		spi0 = &qspi;
-		spi1 = &spi0;
+		spi1 = &spi1;
 	};
 
 	chosen {
@@ -59,6 +59,12 @@
 			gpios = <&gpio 62 GPIO_ACTIVE_HIGH>;
 			linux,default-trigger = "heartbeat";
 		};
+	};
+
+	gtr_refclk0: psgtr_pcie_clock {
+		compatible = "fixed-clock";
+		#clock-cells = <0x00>;
+		clock-frequency = <100000000>;
 	};
 };
 
@@ -231,26 +237,26 @@
 		};
 	};
 
-	pinctrl_spi0_default: spi0-default {
+	pinctrl_spi1_default: spi1-default {
 		mux {
-			groups = "spi0_2_grp";
-			function = "spi0";
+			groups = "spi1_1_grp";
+			function = "spi1";
 		};
 
 		conf {
-			groups = "spi0_2_grp";
+			groups = "spi1_1_grp";
 			bias-disable;
 			slew-rate = <SLEW_RATE_SLOW>;
 			power-source = <IO_STANDARD_LVCMOS18>;
 		};
 
 		mux-cs {
-			groups = "spi0_ss_2_grp";
-			function = "spi0_ss";
+			groups = "spi1_ss_1_grp";
+			function = "spi1_ss";
 		};
 
 		conf-cs {
-			groups = "spi0_ss_2_grp";
+			groups = "spi1_ss_1_grp";
 			bias-disable;
 		};
 	};
@@ -343,8 +349,8 @@
 &psgtr {
 	status = "okay";
 	/* pcie, sata, usb3, dp */
-	//clocks = <&si5341 0 5>, <&si5341 0 3>, <&si5341 0 2>, <&si5341 0 0>;
-	clock-names = "ref0", "ref1", "ref2", "ref3";
+	clocks = <&gtr_refclk0>;
+	clock-names = "ref0";
 };
 
 &qspi {
@@ -365,11 +371,11 @@
 };
 
 /* HMC7044 hosted at SPI0 on rev0, but SPI1 on rev1. */
-spi_hmc7044: &spi0 {
+spi_hmc7044: &spi1 {
 	status = "okay";
 	num-cs = <1>;
 	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_spi0_default>;
+	pinctrl-0 = <&pinctrl_spi1_default>;
 };
 
 &i2c1 {
@@ -429,6 +435,15 @@ spi_hmc7044: &spi0 {
 				gpio-line-names = "LED7_G", "LED7_E", "LED7_F", "LED7_D", "LED7_C", "LED7_A", "LED7_DP", "LED7_B";
 			};
 
+			/*ssd1306: oled@3c {
+				compatible = "solomon,ssd1306fb-i2c";
+				reg = <0x3c>;
+				solomon,height = <32>;
+				solomon,width = <128>;
+				solomon,page-offset = <0>;
+				solomon,com-invdir;
+				solomon,com-seq;
+			};*/
 		};
 	};
 };

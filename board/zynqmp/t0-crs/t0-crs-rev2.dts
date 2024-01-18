@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0+
 /*
- * dts file for t0.technology CRS rev1
+ * dts file for t0.technology CRS rev2
  *
- * (C) Copyright 2022 t0.technology
+ * (C) Copyright 2022-2024 t0.technology
  *
  * Graeme Smecher <gsmecher@t0.technology>
  */
@@ -27,8 +27,8 @@
 #include <dt-bindings/phy/phy.h>
 
 / {
-	model = "t0.technology CRS Rev0";
-	compatible = "t0,zynqmp-crs-rev1", "t0,zynqmp-crs", "xlnx,zynqmp";
+	model = "t0.technology CRS Rev2";
+	compatible = "t0,zynqmp-crs-rev2", "t0,zynqmp-crs", "xlnx,zynqmp";
 
 	aliases {
 		ethernet0 = &gem3;
