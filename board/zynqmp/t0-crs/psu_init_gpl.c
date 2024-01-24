@@ -1198,13 +1198,13 @@ static unsigned long psu_ddr_init_data(void)
 	psu_mask_write(0xFD080700, 0xFFFFFFFFU, 0x40800604U);
 	psu_mask_write(0xFD080704, 0xFFFFFFFFU, 0x00007FFFU);
 	psu_mask_write(0xFD08070C, 0xFFFFFFFFU, 0x3F000008U);
-	psu_mask_write(0xFD080710, 0xFFFFFFFFU, 0x0E00B03CU);
+	psu_mask_write(0xFD080710, 0xFFFFFFFFU, 0x0E00B004U);
 	psu_mask_write(0xFD080714, 0xFFFFFFFFU, 0x09094F4FU);
 	psu_mask_write(0xFD080718, 0xFFFFFFFFU, 0x09092B2BU);
 	psu_mask_write(0xFD080800, 0xFFFFFFFFU, 0x40800604U);
 	psu_mask_write(0xFD080804, 0xFFFFFFFFU, 0x00007FFFU);
 	psu_mask_write(0xFD08080C, 0xFFFFFFFFU, 0x3F000008U);
-	psu_mask_write(0xFD080810, 0xFFFFFFFFU, 0x0E00B03CU);
+	psu_mask_write(0xFD080810, 0xFFFFFFFFU, 0x0E00B004U);
 	psu_mask_write(0xFD080814, 0xFFFFFFFFU, 0x09094F4FU);
 	psu_mask_write(0xFD080818, 0xFFFFFFFFU, 0x09092B2BU);
 	psu_mask_write(0xFD080900, 0xFFFFFFFFU, 0x40800604U);
@@ -1599,7 +1599,7 @@ static unsigned long psu_resetout_init_data(void)
 	psu_mask_write(0xFD480064, 0x000001FFU, 0x00000006U);
 	psu_mask_write(0xFD480010, 0x00001000U, 0x00000000U);
 	psu_mask_write(0xFD480164, 0x00001FFEU, 0x00000000U);
-	psu_mask_write(0xFD48013C, 0x00000020U, 0x00000000U);
+	psu_mask_write(0xFD48013C, 0x00000020U, 0x00000020U);
 	psu_mask_write(0xFD4800AC, 0x00000100U, 0x00000000U);
 	psu_mask_write(0xFD4800C0, 0x000007FFU, 0x00000000U);
 	psu_mask_write(0xFD4800B8, 0x0000FFFFU, 0x00000000U);
