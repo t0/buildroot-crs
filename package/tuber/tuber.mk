@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-TUBER_VERSION = v0.9
+TUBER_VERSION = v0.10
 TUBER_SITE_METHOD = git
 TUBER_SITE = ssh://git@github.com/gsmecher/tuber.git
 TUBER_LICENSE = GPL-3.0
@@ -14,6 +14,6 @@ TUBER_INSTALL_STAGING = YES
 
 TUBER_CONF_OPTS = -DPYTHON_EXECUTABLE=$(HOST_DIR)/bin/python3
 
-TUBER_DEPENDENCIES = python-pybind boost libhttpserver fmt
+TUBER_DEPENDENCIES = python-pybind python-cbor2 python-orjson libhttpserver fmt
 
 $(eval $(cmake-package))
