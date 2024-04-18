@@ -1,0 +1,19 @@
+--- nbconvert-7.3.1/hatch_build.py	2023-04-10 09:58:09.000000000 -0400
++++ nbconvert-7.3.1/hatch_build_new.py	2024-03-11 13:14:03.900065615 -0400
+@@ -1,6 +1,7 @@
+ """Custom build script for hatch backend"""
+ import os
+ import sys
++import certifi
+ from urllib.request import urlopen
+ 
+ from hatchling.builders.hooks.plugin.interface import BuildHookInterface
+@@ -47,7 +48,7 @@
+         os.makedirs(directory)
+     print("Downloading CSS: %s" % url)
+     try:
+-        css = urlopen(url).read()  # noqa
++        css = urlopen(url, cafile=certifi.where()).read()  # noqa
+     except Exception as e:
+         msg = f"Failed to download css from {url}: {e}"
+         print(msg, file=sys.stderr)

@@ -1,0 +1,15 @@
+--- python-matplotlib-3.4.3/setup.py	2024-03-11 17:19:07.569386025 -0400
++++ python-matplotlib-3.4.3/setup_new.py	2024-03-11 17:19:46.297258324 -0400
+@@ -300,12 +300,10 @@
+     python_requires='>={}'.format('.'.join(str(n) for n in py_min_version)),
+     setup_requires=[
+         "certifi>=2020.06.20",
+-        "numpy>=1.16",
+     ],
+     install_requires=[
+         "cycler>=0.10",
+         "kiwisolver>=1.0.1",
+-        "numpy>=1.16",
+         "pillow>=6.2.0",
+         "pyparsing>=2.2.1",
+         "python-dateutil>=2.7",

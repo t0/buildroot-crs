@@ -1,0 +1,10 @@
+--- jupyterlab-4.0.12/pyproject.toml	2024-01-30 09:17:41.000000000 -0500
++++ jupyterlab-4.0.12/pyproject_new.toml	2024-03-11 14:17:16.914647903 -0400
+@@ -187,7 +187,6 @@
+ ]
+ 
+ [tool.hatch.build.hooks.jupyter-builder]
+-dependencies = ["hatch-jupyter-builder>=0.3.2"]
+ build-function = "buildapi.builder"
+ ensured-targets = [
+     "jupyterlab/static/package.json",
