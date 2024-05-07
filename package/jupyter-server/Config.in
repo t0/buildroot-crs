@@ -1,6 +1,7 @@
 config BR2_PACKAGE_JUPYTER_SERVER
 	bool "jupyter-server"
 	select BR2_PACKAGE_PYTHON_OVERRIDES
+	select BR2_PACKAGE_HOST_NODEJS
 	help
 	  Jupyter Server
 
