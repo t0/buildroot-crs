@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-TUBER_VERSION = 0.12
-TUBER_SITE = https://github.com/gsmecher/tuber/releases/download/v0.12
+TUBER_VERSION = 0.13
+TUBER_SITE = https://github.com/gsmecher/tuber/releases/download/v0.13
 TUBER_LICENSE = BSD-3-Clause
 TUBER_LICENSE_FILES = LICENSE
 TUBER_INSTALL_STAGING = YES
