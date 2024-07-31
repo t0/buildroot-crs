@@ -1,11 +1,11 @@
-config BR2_PACKAGE_TUBER
-	bool "tuber"
+config BR2_PACKAGE_TUBERD
+	bool "tuberd"
 	depends on BR2_PACKAGE_PYTHON_PYBIND
 	depends on BR2_PACKAGE_PYTHON_CBOR2
 	depends on BR2_PACKAGE_PYTHON_ORJSON
 	depends on BR2_PACKAGE_FMT
 	depends on BR2_PACKAGE_LIBHTTPSERVER
 	help
-	  Tuber seamlessly exposes Python (or native C++) code across a LAN, using something like JSON-RPC.
+	  Tuberd seamlessly exposes Python (or native C++) code across a LAN, using something like JSON-RPC.
 
-	  https://github.com/gsmecher/tuber
+	  https://github.com/gsmecher/tuberd
