@@ -1,35 +1,38 @@
-From bf9f0d619e2e0a424e471a2f9235d26ece5b348c Mon Sep 17 00:00:00 2001
-From: "Arnout Vandecappelle (Essensium/Mind)" <arnout@mind.be>
-Date: Fri, 7 Jan 2022 19:32:18 +0100
+From 620933724d54b15839835ba9a154375eaf4533f5 Mon Sep 17 00:00:00 2001
+From: Graeme Smecher <gsmecher@t0.technology>
+Date: Tue, 20 Aug 2024 15:44:33 -0700
 Subject: [PATCH] pybind11/commands.py: support STAGING_DIR
 
 In Buildroot, we install build-time python scripts in the host directory
 (otherwise they can't be run with host python), but when running
 pybind11 --includes it should return the staging directory.
 
-Patch commands.py to use the STAGING_DIR environment variable instead of
-the current directory, if it is set.
+Patch commands.py to use $STAGING_DIR/usr if the environment variable is
+set. Otherwise, use the current directory.
 
+Signed-off-by: Graeme Smecher <gsmecher@t0.technology>
 Signed-off-by: Arnout Vandecappelle (Essensium/Mind) <arnout@mind.be>
-Upstream-Status: N/A, Buildroot specific
 Signed-off-by: Guillaume W. Bres <guillaume.bressaix@gmail.com>
+Upstream-Status: N/A, Buildroot specific
 ---
- pybind11/commands.py | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ pybind11/commands.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/pybind11/commands.py b/pybind11/commands.py
-index a29c8ca..de8a27c 100644
+index d535b6c..1326d7d 100644
 --- a/pybind11/commands.py
 +++ b/pybind11/commands.py
-@@ -1,6 +1,7 @@
+@@ -1,6 +1,9 @@
  import os
  
 -DIR = os.path.abspath(os.path.dirname(__file__))
-+DIR = os.environ.get('STAGING_DIR') or \
-+    os.path.abspath(os.path.dirname(__file__))
++if STAGING_DIR := os.environ.get('STAGING_DIR'):
++    DIR = os.path.join(STAGING_DIR, 'usr')
++else:
++    DIR = os.path.abspath(os.path.dirname(__file__))
  
  
- def get_include(user: bool = False) -> str:  # pylint: disable=unused-argument
+ def get_include(user: bool = False) -> str:  # noqa: ARG001
 -- 
-2.31.1
+2.43.0
 
