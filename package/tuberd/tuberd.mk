@@ -11,6 +11,6 @@ TUBERD_LICENSE_FILES = LICENSE
 TUBERD_INSTALL_STAGING = YES
 TUBERD_SETUP_TYPE = setuptools
 TUBERD_DEPENDENCIES = python-pybind python-cbor2 python-orjson libhttpserver fmt host-python-setuptools-scm
-TUBERD_ENV = CMAKE_ARGS="-DCMAKE_TOOLCHAIN_FILE=$(HOST_DIR)/usr/share/buildroot/toolchainfile.cmake -DCMAKE_MODULE_PATH=$(STAGING_DIR)/usr/share/cmake/Modules -Dpybind11_DIR=$(PYTHON_PYBIND_INSTALL_PATH)/share/cmake/pybind11"
+TUBERD_ENV = CMAKE_ARGS="-DCMAKE_TOOLCHAIN_FILE=$(HOST_DIR)/usr/share/buildroot/toolchainfile.cmake -DCMAKE_MODULE_PATH=$(STAGING_DIR)/usr/share/cmake/Modules"
 
 $(eval $(python-package))
