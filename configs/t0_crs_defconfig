@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot -ga58682405b-dirty Configuration
+# Buildroot -gaddd9020b5 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -2543,7 +2543,7 @@ BR2_PACKAGE_LIBPCAP=y
 # BR2_PACKAGE_NETOPEER2 is not set
 # BR2_PACKAGE_NGHTTP2 is not set
 # BR2_PACKAGE_NORM is not set
-# BR2_PACKAGE_NSS_MDNS is not set
+BR2_PACKAGE_NSS_MDNS=y
 # BR2_PACKAGE_NSS_MYHOSTNAME is not set
 # BR2_PACKAGE_NSS_PAM_LDAPD is not set
 # BR2_PACKAGE_OATPP is not set
@@ -3156,7 +3156,7 @@ BR2_PACKAGE_TCPDUMP=y
 # BR2_PACKAGE_TOR is not set
 # BR2_PACKAGE_TRACEROUTE is not set
 # BR2_PACKAGE_TRANSMISSION is not set
-BR2_PACKAGE_TUBER=y
+BR2_PACKAGE_TUBERD=y
 # BR2_PACKAGE_TUNCTL is not set
 # BR2_PACKAGE_TVHEADEND is not set
 # BR2_PACKAGE_UACME is not set
