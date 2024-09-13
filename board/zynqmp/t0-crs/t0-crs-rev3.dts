@@ -196,6 +196,9 @@
 			r1v4_tmp421@4c	{ compatible = "ti,tmp421"; reg = <0x4c>; channel@0 { reg = <0x0>; label = "r1v4"; }; };
 			r1v2b_tmp421@4d	{ compatible = "ti,tmp421"; reg = <0x4d>; channel@0 { reg = <0x0>; label = "r1v2b"; }; };
 
+			/* rev3 adds PLL1 thermometry */
+			pll1_tmp421@4e	{ compatible = "ti,tmp421"; reg = <0x4e>; channel@0 { reg = <0x0>; label = "pll1"; }; };
+
 			r0v85_tmp422@4f	{
 				compatible = "ti,tmp422";
 				reg = <0x4f>;
