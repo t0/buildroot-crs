@@ -141,7 +141,7 @@
 
 &i2c0 {
 	status = "okay";
-	clock-frequency = <400000>;
+	clock-frequency = <100000>;
 	pinctrl-names = "default", "gpio";
 	pinctrl-0 = <&pinctrl_i2c0_default>;
 	pinctrl-1 = <&pinctrl_i2c0_gpio>;
@@ -151,7 +151,7 @@
 
 &i2c1 {
 	status = "okay";
-	clock-frequency = <400000>;
+	clock-frequency = <100000>;
 	pinctrl-names = "default", "gpio";
 	pinctrl-0 = <&pinctrl_i2c1_default>;
 	pinctrl-1 = <&pinctrl_i2c1_gpio>;
@@ -210,7 +210,7 @@
 			eeprom: at24c01@57 { compatible = "atmel,24c01"; reg = <0x57>; };
 			at24cs01@5f { compatible = "atmel,24cs01"; reg = <0x5f>; };
 
-			/* Rev1 only - PS-attached 7-segment LED */
+			/* Rev1+ - PS-attached 7-segment LED */
 			u42: pca8574@22 {
 				compatible = "nxp,pca8574";
 				reg = <0x22>;
@@ -418,6 +418,7 @@
 
 &pcie {
 	status = "okay";
+	phys = <&psgtr 0 PHY_TYPE_PCIE 0 0>;
 };
 
 &psgtr {
